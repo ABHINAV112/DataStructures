@@ -1,4 +1,4 @@
-class UAPriorityQueue:
+class PriorityQueue:
     def __init__(self):
         self.p_queue = []
     

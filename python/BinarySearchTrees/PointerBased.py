@@ -4,39 +4,36 @@ class Node:
         self.parent = None
         self.left = None
         self.right = None
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    def insert_node(self,x):
+        new_node = Node(x)
+
+        def recurs(node,x):
+            pass
     
-    # insert a value
-    def insert_value(self,x):
+    def delete_node(self,x):
         pass
 
-    # delete a node when given the same node
-    def delete_node(self,node):
-        pass
-    
-    # find the value then delete
-    def delete_value(self,x):
-        pass
+    def in_order(self, node, callback):
+        if(self.node!=None):
+            self.in_order(node.left,callback)
+            callback(self.node)
+            self.in_order(node.right,callback)
+
+    def post_order(self,node,callback):
+        if(self.node!=None):
+            self.in_order(node.left,callback)
+            self.in_order(node.right,callback)
+            callback(self.node)
+
     
     def pre_order(self,node,callback):
-        if(node!=None):
-            callback(node)
-            self.pre_order(node.left,callback)
-            self.pre_order(node.right,callback)
-    
-    def post_order(self,node,callback):
-        if(node!=None):
-            self.pre_order(node.left,callback)
-            self.pre_order(node.right,callback)
-            callback(node)
-    
-    def in_order(self,node,callback):
-        if(node!=None):
-            self.pre_order(node.left,callback)
-            callback(node)
-            self.pre_order(node.right,callback)
-
-    def find_node(self,x):
-        pass
-            
-
+        if(self.node!=None):
+            callback(self.node)
+            self.in_order(node.left,callback)
+            self.in_order(node.right,callback)
 

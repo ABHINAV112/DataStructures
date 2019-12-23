@@ -1,4 +1,4 @@
-class SAPriorityQueue:
+class PriorityQueue:
     def __init__(self):
         # array sorted backwards
         self.p_queue = []

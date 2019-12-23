@@ -32,7 +32,20 @@ class StackList:
         while(itr!=None):
             callback(itr)
             itr = itr.next
+    
+    def callback(self,x):
+        self.represent.append(x.value)
 
+    def __repr__(self):
+        self.represent = []
+        self.traversal(self.callback)
+        result = self.__class__.__name__+"("
+        for i,val in enumerate(self.represent):
+            result+=" {} ".format(val)
+            if(i!=len(self.represent)-1):
+                result+="->"
+        result+=")"
+        return result
 
 if(__name__=="__main__"):
     currStack = StackList()
@@ -41,6 +54,6 @@ if(__name__=="__main__"):
 
     currStack.traversal(lambda x:print(x.value))
 
-    for i in range(6):
-        print(currStack.pop())
+
+    print(currStack)
         

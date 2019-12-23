@@ -1,4 +1,4 @@
-class MaxHeap:
+class MinHeap:
     def __init__(self):
         self.heap = []
         self.heap_size = 0
@@ -58,14 +58,17 @@ class MaxHeap:
         else:
             self.sift_down(index)
         return deleted_element
+    
+    def __repr__(self):
+        return "{}({})".format(self.__class__.__name__,self.heap)
 
 if(__name__=="__main__"):
     input_list = list(map(int,input().split()))
-    MH = MaxHeap()
+    MH = MinHeap()
 
     for i in input_list:
         MH.insert(i)
 
     print(MH.heap)
     MH.delete_minimum()
-    print(MH.heap)
+    print(MH)

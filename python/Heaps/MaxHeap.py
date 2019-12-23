@@ -57,6 +57,8 @@ class MaxHeap:
         else:
             self.sift_down(index)
 
+    def __repr__(self):
+        return "{}({})".format(self.__class__.__name__,self.heap)
 if(__name__=="__main__"):
     input_list = list(map(int,input().split()))
     MH = MaxHeap()
@@ -66,4 +68,4 @@ if(__name__=="__main__"):
 
     print(MH.heap)
     MH.delete(2)
-    print(MH.heap)
+    print(MH)
